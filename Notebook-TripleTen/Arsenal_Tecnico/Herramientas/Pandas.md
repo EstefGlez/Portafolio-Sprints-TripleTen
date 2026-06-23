@@ -1,0 +1,87 @@
+---
+tags: [herramienta, pandas, python, indice]
+tipo: indice-herramienta
+---
+
+# 🐍 Pandas — Índice de Capacidades
+
+Referencia rápida de todo lo que puedes hacer con Pandas en el contexto del bootcamp. Cada entrada enlaza a la nota de operación donde está el código completo.
+
+---
+
+## 🗂️ Capacidades por Categoría
+
+### 📦 Carga y Exploración
+| Qué hace | Función clave | Nota |
+|---|---|---|
+| Cargar un CSV | `pd.read_csv()` | [[Carga_y_Exploracion#cargar-csv]] |
+| Cargar múltiples fuentes | `pd.read_csv()` × N | [[Carga_y_Exploracion#cargar-multiples]] |
+| Vista preliminar | `.head()` `.tail()` `.sample()` | [[Carga_y_Exploracion#vista-previa]] |
+| Dimensiones y tipos de datos | `.shape` `.info()` | [[Carga_y_Exploracion#auditoria-basica]] |
+| Auditoría de nulos | `.isna().sum()` `.isna().mean()` | [[Carga_y_Exploracion#auditoria-nulos]] |
+| Auditoría de duplicados | `.duplicated().sum()` | [[Carga_y_Exploracion#duplicados]] |
+
+### ⚙️ Transformación y Feature Engineering
+| Qué hace | Función clave | Nota |
+|---|---|---|
+| Estandarizar columnas a snake_case | `re.sub()` + list comprehension | [[Transformacion_y_Feature_Engineering#snake-case]] |
+| Convertir texto a fecha | `pd.to_datetime()` | [[Transformacion_y_Feature_Engineering#to-datetime]] |
+| Extraer año / mes / día de fecha | `.dt.year` `.dt.month` | [[Transformacion_y_Feature_Engineering#to-datetime]] |
+| Limpiar strings con `%`, `,`, `.` | `.str.replace().astype(float)` | [[Transformacion_y_Feature_Engineering#limpiar-strings]] |
+| Imputar nulos con mediana | `.replace(-999, mediana)` | [[Transformacion_y_Feature_Engineering#imputar-pandas]] |
+| Reemplazar marcadores desconocidos | `.replace("?", pd.NA)` | [[Transformacion_y_Feature_Engineering#imputar-pandas]] |
+| Tratar fechas futuras / imposibles | `df.loc[condición] = pd.NaT` | [[Transformacion_y_Feature_Engineering#fechas-anomalas]] |
+| Crear variables indicadoras (flags) | `(condición).astype(int)` | [[Transformacion_y_Feature_Engineering#flags]] |
+| Segmentar numérico en categorías | `pd.cut()` | [[Transformacion_y_Feature_Engineering#pd-cut]] |
+| Convertir unidades | Operación aritmética directa | [[Transformacion_y_Feature_Engineering#conversion-unidades]] |
+
+### 🔗 Joins y Combinación
+| Qué hace | Función clave | Nota |
+|---|---|---|
+| Inner join | `pd.merge(..., how="inner")` | [[Joins_y_Combinacion#merge-inner]] |
+| Left join | `pd.merge(..., how="left")` | [[Joins_y_Combinacion#merge-left]] |
+| Preseleccionar columnas antes del merge | `df[cols].copy()` | [[Joins_y_Combinacion#preselect]] |
+
+### 📈 Agregación y Reportes
+| Qué hace | Función clave | Nota |
+|---|---|---|
+| Agrupar y agregar | `.groupby().sum()` `.groupby().mean()` | [[Agregacion_y_Reportes#kpis-sheets]] |
+| Conteo por categoría | `.value_counts()` `.value_counts(normalize=True)` | [[Carga_y_Exploracion#auditoria-basica]] |
+| Estadísticos descriptivos | `.describe()` | [[Carga_y_Exploracion#auditoria-basica]] |
+
+### 🧪 Análisis Estadístico
+| Qué hace | Función clave | Nota |
+|---|---|---|
+| Matriz de correlación Pearson | `.corr(method="pearson")` | [[Analisis_Estadistico#correlacion-pearson]] |
+| Tabla de contingencia | `pd.crosstab()` | [[Analisis_Estadistico#crosstab]] |
+| Prueba Chi-cuadrado | `chi2_contingency()` (SciPy) | [[Analisis_Estadistico#chi2]] |
+
+### 📉 Visualización
+| Qué hace | Función clave | Nota |
+|---|---|---|
+| Configuración global de estilo | `sns.set_theme()` | [[Visualizacion#config-global]] |
+| Histograma + KDE | `sns.histplot(kde=True)` | [[Visualizacion#histplot]] |
+| Histograma segmentado por grupo | `sns.histplot(hue=)` | [[Visualizacion#hue]] |
+| Boxplot con media | `sns.boxplot(showmeans=True)` | [[Visualizacion#boxplot]] |
+| Scatterplot con burbujas | `sns.scatterplot(size=)` | [[Visualizacion#scatterplot]] |
+| Barplot de promedios | `sns.barplot()` | [[Visualizacion#barplot]] |
+| Múltiples gráficos en una figura | `plt.subplots(filas, cols)` | [[Visualizacion#subplots]] |
+| Heatmap de correlación | `sns.heatmap()` | [[Analisis_Estadistico#heatmap]] |
+
+---
+
+## 📌 Sprints donde se usó Pandas
+
+| Sprint | Proyecto | Operaciones destacadas |
+|---|---|---|
+| S5 | LADB — Movilidad urbana LATAM | snake_case, to_datetime, merge, groupby, scatterplot con burbujas |
+| S7 | ConnectaTel — Segmentación | Sentinels, MAR, imputación con mediana, flags, histplot con hue |
+| S8 | NovaRetail+ — Comportamiento | pd.cut, correlación Pearson, heatmap coolwarm |
+| S9 | Landing Page — Pruebas A/B | crosstab, chi2_contingency, barplot, interpretación p-value |
+
+---
+
+## 🔗 Conexiones Estratégicas
+
+- **Índice Maestro:** [[Indice_Maestro]]
+- **Herramienta relacionada:** [[SQL]] | [[Google_Sheets]]

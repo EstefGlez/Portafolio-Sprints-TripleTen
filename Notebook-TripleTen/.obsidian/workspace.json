@@ -1,0 +1,229 @@
+{
+  "main": {
+    "id": "67f7025728618622",
+    "type": "split",
+    "children": [
+      {
+        "id": "2afabfc337ac511d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "78acdcb61c1442cc",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Nueva pestaña"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8a9d1cd77b8fcd02",
+    "type": "split",
+    "children": [
+      {
+        "id": "3bdcdcacd7f68578",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7677d3759833f7f7",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de archivos"
+            }
+          },
+          {
+            "id": "401e33aa6ea6383f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Buscar"
+            }
+          },
+          {
+            "id": "48628bd8982acce3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "be13f62231fb8c5e",
+    "type": "split",
+    "children": [
+      {
+        "id": "ee63d2db07b6d98e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "050c9bf7a6a6226e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Enlaces entrantes"
+            }
+          },
+          {
+            "id": "bccb54bc02a0b030",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Enlaces salientes"
+            }
+          },
+          {
+            "id": "2f6ef3e5326f6998",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "27223efe3f6ebd41",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas las propiedades"
+            }
+          },
+          {
+            "id": "f1727ff5a5d2a9c7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Esquema"
+            }
+          },
+          {
+            "id": "12ebfc9656927ca0",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-chat-view",
+              "state": {},
+              "icon": "message-square",
+              "title": "Copilot"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Crear nueva base": false,
+      "copilot:Open Copilot Chat": false
+    }
+  },
+  "active": "78acdcb61c1442cc",
+  "lastOpenFiles": [
+    "Arsenal_Tecnico/Herramientas/SQL.md",
+    "copilot/copilot-conversations/Análisis_de_tu_bóveda_digital@20260623_002743.md",
+    "copilot/copilot-conversations/Análisis_de_bóveda_Arsenal_Tecnico@20260623_124557.md",
+    "Arsenal_Tecnico/Indice_Maestro.md",
+    "Arsenal_Tecnico/Herramientas/Power_BI.md",
+    "copilot/copilot-custom-prompts/Plantilla Sprint.md",
+    "Sprint_02_Walmart_Analisis_Comercial_y_Relacional.md",
+    "copilot/copilot-custom-prompts/Summarize.md",
+    "copilot/copilot-custom-prompts/Simplify.md",
+    "copilot/copilot-custom-prompts/Generate glossary.md",
+    "copilot/copilot-custom-prompts/Remove URLs.md",
+    "copilot/copilot-custom-prompts/Make shorter.md",
+    "copilot/copilot-custom-prompts/Make longer.md",
+    "copilot/copilot-conversations/Revisión_de_bóveda@20260623_002240.md",
+    "copilot/copilot-conversations/Conversación 2.md",
+    "copilot/copilot-conversations/Creación_de_plantillas@20260622_131508.md",
+    "copilot/copilot-conversations/Revisión_de_bóveda_Claude@20260622_142221.md",
+    "Arsenal_Tecnico/Herramientas",
+    "Arsenal_Tecnico/Operaciones",
+    "copilot/copilot-conversations/Conversacion_1.md",
+    "Arsenal_Tecnico",
+    "Arsenal_Tecnico_Operaciones",
+    "Sprint_01_Fundamentos_y_Limpieza.md.md",
+    "copilot/copilot-custom-prompts/Clip YouTube Transcript.md",
+    "copilot/copilot-custom-prompts/Clip Web Page.md",
+    "Sin título.canvas",
+    "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
+    "copilot/copilot-conversations",
+    "copilot/copilot-custom-prompts/Rewrite as tweet.md",
+    "copilot/copilot-custom-prompts/Generate table of contents.md",
+    "copilot/copilot-custom-prompts/Emojify.md",
+    "copilot/copilot-custom-prompts/Explain like I am 5.md",
+    "copilot/copilot-custom-prompts",
+    "copilot",
+    "Pasted image 20260620005705.png"
+  ]
+}
