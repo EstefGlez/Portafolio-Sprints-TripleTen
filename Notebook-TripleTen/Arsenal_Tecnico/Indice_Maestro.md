@@ -34,6 +34,8 @@ Mapa central de todas las herramientas y operaciones del bootcamp. Punto de entr
 | 🗄️ SQL (PostgreSQL) | S3, S4 | [[SQL]] |
 | 📊 Power BI | S10 | [[Power_BI]] |
 | ⚙️ Jupyter en VS Code | S5, S7, S8, S9 | [[Jupyter_VSCode]] |
+| 📉 Matplotlib & Seaborn | S5, S7, S8, S9 | [[Matplotlib_Seaborn]] |
+| 🔢 NumPy | S5, S7, S8, S9 | [[Numpy]] |
 | 🌿 Git & GitHub | Todos | [[Git_GitHub]] |
 
 ---
@@ -44,7 +46,7 @@ Mapa central de todas las herramientas y operaciones del bootcamp. Punto de entr
 
 ```
 Soy Estefano, estudiante de Análisis de Datos (TripleTen, Sprint actual: [X]).
-Stack técnico: Google Sheets, Python (Pandas, Matplotlib, Seaborn, SciPy, statsmodels), SQL (PostgreSQL), Power BI.
+Stack técnico: Google Sheets, Python (Pandas, NumPy, Matplotlib, Seaborn, SciPy, statsmodels), SQL (PostgreSQL), Power BI.
 Entorno: Jupyter Notebooks en VS Code con kernel virtual env (Python 3.14.6).
 Control de versiones: Git + GitHub (Portafolio-Sprints-TripleTen).
 

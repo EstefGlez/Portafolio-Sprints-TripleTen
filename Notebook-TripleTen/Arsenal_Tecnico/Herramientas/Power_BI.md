@@ -14,19 +14,19 @@ Referencia rápida de conceptos, patrones y técnicas de Power BI aplicados en e
 ### 🔄 Power Query (ETL Visual)
 | Qué hace | Técnica | Nota |
 |---|---|---|
-| Normalizar formato de fechas | Cambiar tipo → Fecha (idioma ES-LATAM) | [[Power_BI_S10#power-query]] |
-| Corregir tipos de datos numéricos | Cambiar tipo → Número decimal / entero | [[Power_BI_S10#power-query]] |
-| Crear columna condicional | Columna condicional visual (sin DAX) | [[Power_BI_S10#nivel-venta]] |
-| Validar calidad del dataset | Vista Perfil de Columna | [[Power_BI_S10#power-query]] |
+| Normalizar formato de fechas | Cambiar tipo → Fecha (idioma ES-LATAM) | [[Power_BI#power-query]] |
+| Corregir tipos de datos numéricos | Cambiar tipo → Número decimal / entero | [[Power_BI#power-query]] |
+| Crear columna condicional | Columna condicional visual (sin DAX) | [[Power_BI#nivel-venta]] |
+| Validar calidad del dataset | Vista Perfil de Columna | [[Power_BI#power-query]] |
 
 ### 📐 Métricas y KPIs (DAX básico)
 | Qué hace | Patrón | Nota |
 |---|---|---|
-| Suma total de ingresos | `SUM(tabla[Ingresos])` | [[Power_BI_S10#kpis]] |
-| Ganancia neta | `SUM(Ingresos) - SUM(Costos)` | [[Power_BI_S10#kpis]] |
-| Conteo de unidades vendidas | `SUM(tabla[Unidades_Vendidas])` | [[Power_BI_S10#kpis]] |
-| Conteo único de clientes | `DISTINCTCOUNT(tabla[ID_Cliente])` | [[Power_BI_S10#kpis]] |
-| Columna calculada condicional | `IF(Ingresos >= 1000, "Venta Alta", "Venta Baja")` | [[Power_BI_S10#nivel-venta]] |
+| Suma total de ingresos | `SUM(tabla[Ingresos])` | [[Power_BI#kpis]] |
+| Ganancia neta | `SUM(Ingresos) - SUM(Costos)` | [[Power_BI#kpis]] |
+| Conteo de unidades vendidas | `SUM(tabla[Unidades_Vendidas])` | [[Power_BI#kpis]] |
+| Conteo único de clientes | `DISTINCTCOUNT(tabla[ID_Cliente])` | [[Power_BI#kpis]] |
+| Columna calculada condicional | `IF(Ingresos >= 1000, "Venta Alta", "Venta Baja")` | [[Power_BI#nivel-venta]] |
 
 ### 📉 Visualizaciones
 | Visual | Cuándo usarlo | Vista |
