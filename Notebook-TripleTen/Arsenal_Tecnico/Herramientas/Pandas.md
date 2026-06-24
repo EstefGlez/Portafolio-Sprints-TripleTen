@@ -85,3 +85,24 @@ Referencia rápida de todo lo que puedes hacer con Pandas en el contexto del boo
 
 - **Índice Maestro:** [[Indice_Maestro]]
 - **Herramienta relacionada:** [[SQL]] | [[Google_Sheets]]
+
+---
+
+## 📌 Actualización — Pruebas Estadísticas Completas
+
+### scipy.stats
+| Qué hace | Función clave | Nota |
+|---|---|---|
+| Correlación de Spearman | `spearmanr(a, b)` | [[Analisis_Estadistico#spearman]] |
+| Correlación de Punto Biserial | `pointbiserialr(binaria, numerica)` | [[Analisis_Estadistico#punto-biserial]] |
+| Prueba Chi-cuadrado | `chi2_contingency(tabla)` | [[Analisis_Estadistico#chi2]] |
+| V de Cramér (magnitud) | `chi2` + cálculo manual con `np.sqrt` | [[Analisis_Estadistico#cramer]] |
+| Prueba Exacta de Fisher | `fisher_exact(tabla_2x2)` | [[Analisis_Estadistico#fisher]] |
+| T-test 2 muestras independientes | `ttest_ind(a, b, equal_var=False)` | [[Analisis_Estadistico#ttest]] |
+| Levene (homogeneidad varianzas) | `levene(a, b)` | [[Analisis_Estadistico#levene]] |
+| Shapiro-Wilk (normalidad) | `shapiro(data)` | [[Analisis_Estadistico#shapiro]] |
+
+### statsmodels
+| Qué hace | Función clave | Nota |
+|---|---|---|
+| Z-test de proporciones (A/B) | `proportions_ztest(count, nobs)` | [[Analisis_Estadistico#ztest]] |

@@ -34,6 +34,7 @@ Mapa central de todas las herramientas y operaciones del bootcamp. Punto de entr
 | 🗄️ SQL (PostgreSQL) | S3, S4 | [[SQL]] |
 | 📊 Power BI | S10 | [[Power_BI]] |
 | ⚙️ Jupyter en VS Code | S5, S7, S8, S9 | [[Jupyter_VSCode]] |
+| 🌿 Git & GitHub | Todos | [[Git_GitHub]] |
 
 ---
 
@@ -43,8 +44,9 @@ Mapa central de todas las herramientas y operaciones del bootcamp. Punto de entr
 
 ```
 Soy Estefano, estudiante de Análisis de Datos (TripleTen, Sprint actual: [X]).
-Stack técnico: Google Sheets, Python (Pandas, Matplotlib, Seaborn, SciPy), SQL (PostgreSQL), Power BI.
+Stack técnico: Google Sheets, Python (Pandas, Matplotlib, Seaborn, SciPy, statsmodels), SQL (PostgreSQL), Power BI.
 Entorno: Jupyter Notebooks en VS Code con kernel virtual env (Python 3.14.6).
+Control de versiones: Git + GitHub (Portafolio-Sprints-TripleTen).
 
 Estándar de trabajo:
 - Código modular con celdas funcionales bien etiquetadas (🧩 Paso X)
@@ -69,6 +71,6 @@ Objetivo de la sesión: [DESCRIBIR]
 | S4 | Embudo de conversión y cohortes MercadoLibre | SQL (PostgreSQL) | CTEs, DISTINCT, Retención D7-D28, Cohortes mensuales |
 | S5 | Movilidad urbana LATAM — LADB | Python / Pandas | Carga múltiple, snake_case, merge, datetime, groupby, scatterplot |
 | S7 | Segmentación ConnectaTel | Python / Pandas | Sentinels, MAR, imputación con mediana, flags, histplot con hue |
-| S8 | Comportamiento NovaRetail+ | Python / Pandas | pd.cut, correlación Pearson, heatmap |
-| S9 | Pruebas A/B Landing Page | Python / SciPy | Chi-cuadrado, crosstab, interpretación p-value, barplot |
+| S8 | Comportamiento NovaRetail+ | Python / Pandas + SciPy | pd.cut, Pearson, Spearman, Punto Biserial, V de Cramér, heatmap |
+| S9 | Pruebas A/B Landing Page | Python / SciPy + statsmodels | Chi-cuadrado, T-test, Levene, Z-test proporciones, V de Cramér, Fisher, Shapiro-Wilk |
 | S10 | Andes Retail Group | Power BI | 2 vistas, Nivel_Venta, KPIs macro, SCQA, análisis por segmento |

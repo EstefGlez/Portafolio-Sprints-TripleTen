@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "2afabfc337ac511d",
+        "id": "56222c3d9a71aa4c",
         "type": "tabs",
         "children": [
           {
-            "id": "78acdcb61c1442cc",
+            "id": "c01371cc09d76344",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -188,8 +188,20 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "78acdcb61c1442cc",
+  "active": "c01371cc09d76344",
   "lastOpenFiles": [
+    "copilot/copilot-custom-prompts/Plantilla_Operacion.md",
+    "Herramienta_1.md",
+    "copilot/copilot-custom-prompts/Plantilla_Herramienta.md",
+    "copilot/copilot-conversations/Problema_visualización_plantillas_notas@20260623_183714.md",
+    "Herramienta_2.md",
+    "Nombre_Operacion_Anterior.md",
+    "Nombre_Nota.md",
+    "Arsenal_Tecnico/Herramientas/Git_GitHub.md",
+    "Arsenal_Tecnico/Operaciones/Analisis_Estadistico.md",
+    "Arsenal_Tecnico/Herramientas/Pandas.md",
+    "Arsenal_Tecnico/Analisis_Estadistico.md",
+    "Arsenal_Tecnico/Pandas.md",
     "Arsenal_Tecnico/Herramientas/SQL.md",
     "copilot/copilot-conversations/Análisis_de_tu_bóveda_digital@20260623_002743.md",
     "copilot/copilot-conversations/Análisis_de_bóveda_Arsenal_Tecnico@20260623_124557.md",
@@ -204,24 +216,12 @@
     "copilot/copilot-custom-prompts/Make shorter.md",
     "copilot/copilot-custom-prompts/Make longer.md",
     "copilot/copilot-conversations/Revisión_de_bóveda@20260623_002240.md",
-    "copilot/copilot-conversations/Conversación 2.md",
-    "copilot/copilot-conversations/Creación_de_plantillas@20260622_131508.md",
-    "copilot/copilot-conversations/Revisión_de_bóveda_Claude@20260622_142221.md",
     "Arsenal_Tecnico/Herramientas",
     "Arsenal_Tecnico/Operaciones",
-    "copilot/copilot-conversations/Conversacion_1.md",
     "Arsenal_Tecnico",
     "Arsenal_Tecnico_Operaciones",
-    "Sprint_01_Fundamentos_y_Limpieza.md.md",
-    "copilot/copilot-custom-prompts/Clip YouTube Transcript.md",
-    "copilot/copilot-custom-prompts/Clip Web Page.md",
     "Sin título.canvas",
-    "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
     "copilot/copilot-conversations",
-    "copilot/copilot-custom-prompts/Rewrite as tweet.md",
-    "copilot/copilot-custom-prompts/Generate table of contents.md",
-    "copilot/copilot-custom-prompts/Emojify.md",
-    "copilot/copilot-custom-prompts/Explain like I am 5.md",
     "copilot/copilot-custom-prompts",
     "copilot",
     "Pasted image 20260620005705.png"
