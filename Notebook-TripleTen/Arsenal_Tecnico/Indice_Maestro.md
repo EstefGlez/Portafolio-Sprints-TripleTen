@@ -22,6 +22,9 @@ Mapa central de todas las herramientas y operaciones del bootcamp. Punto de entr
 | 🧪 Análisis Estadístico y Pruebas de Hipótesis | Pandas, SciPy | [[Analisis_Estadistico]] |
 | 📉 Visualización de Datos | Matplotlib, Seaborn | [[Visualizacion]] |
 | 🛒 Modelado Analítico en Sheets (S2 Walmart) | Google Sheets | [[Modelado_Analitico_Sheets]] |
+| ⭐ Star Schema — Modelado Relacional BI | Power BI | [[Modelado_Star_Schema]] |
+| 📊 DAX — Modelado y Cálculos Power BI | Power BI / DAX | [[DAX_Modelado_PowerBI]] |
+| 🎨 Visualizaciones y Diseño Avanzado BI | Power BI | [[DAX_Visualizaciones_PowerBI]] |
 
 ---
 
@@ -32,7 +35,7 @@ Mapa central de todas las herramientas y operaciones del bootcamp. Punto de entr
 | 📗 Google Sheets | S1, S2 | [[Google_Sheets]] |
 | 🐍 Pandas (Python) | S5, S7, S8, S9 | [[Pandas]] |
 | 🗄️ SQL (PostgreSQL) | S3, S4 | [[SQL]] |
-| 📊 Power BI | S10 | [[Power_BI]] |
+| 📊 Power BI | S10, S11 | [[Power_BI]] |
 | ⚙️ Jupyter en VS Code | S5, S7, S8, S9 | [[Jupyter_VSCode]] |
 | 📉 Matplotlib & Seaborn | S5, S7, S8, S9 | [[Matplotlib_Seaborn]] |
 | 🔢 NumPy | S5, S7, S8, S9 | [[Numpy]] |
@@ -76,3 +79,4 @@ Objetivo de la sesión: [DESCRIBIR]
 | S8 | Comportamiento NovaRetail+ | Python / Pandas + SciPy | pd.cut, Pearson, Spearman, Punto Biserial, V de Cramér, heatmap |
 | S9 | Pruebas A/B Landing Page | Python / SciPy + statsmodels | Chi-cuadrado, T-test, Levene, Z-test proporciones, V de Cramér, Fisher, Shapiro-Wilk |
 | S10 | Andes Retail Group | Power BI | 2 vistas, Nivel_Venta, KPIs macro, SCQA, análisis por segmento |
+| S11 | Ventas inmobiliarias — BI Comercial | Power BI / DAX | Star Schema, CALENDAR, CALCULATE+ALL, ALLEXCEPT, YTD, MTD, YoY, Cohortes, Eje dual, Semáforo |

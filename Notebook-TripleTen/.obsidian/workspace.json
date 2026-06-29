@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "c3f1ecc7e8651e78",
+        "id": "3b083cd8effd9df5",
         "type": "tabs",
         "children": [
           {
-            "id": "bef097ee6b94560b",
+            "id": "1d842e82a6dd198b",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Vista gráfica"
+              "type": "markdown",
+              "state": {
+                "file": "Arsenal_Tecnico/Herramientas/Git_GitHub.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Git_GitHub"
             }
           }
         ]
@@ -188,8 +192,14 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "bef097ee6b94560b",
+  "active": "1d842e82a6dd198b",
   "lastOpenFiles": [
+    "Arsenal_Tecnico/Operaciones/Visualizacion.md",
+    "Arsenal_Tecnico/Herramientas/Matplotlib_Seaborn.md",
+    "copilot/copilot-conversations/Metodología_de_estrella_explicada@20260624_205940.md",
+    "Arsenal_Tecnico/Operaciones/Modelado_Star_Schema.md",
+    "Arsenal_Tecnico/Indice_Maestro.md",
+    "Arsenal_Tecnico/Herramientas/Jupyter_VSCode.md",
     "Arsenal_Tecnico/Herramientas/Power_BI.md",
     "Arsenal_Tecnico/Herramientas/Sin confirmar 100632.crdownload",
     "Power_BI_S10.md",
@@ -216,12 +226,7 @@
     "Arsenal_Tecnico/Herramientas/SQL.md",
     "copilot/copilot-conversations/Análisis_de_tu_bóveda_digital@20260623_002743.md",
     "copilot/copilot-conversations/Análisis_de_bóveda_Arsenal_Tecnico@20260623_124557.md",
-    "Arsenal_Tecnico/Indice_Maestro.md",
     "copilot/copilot-custom-prompts/Plantilla Sprint.md",
-    "Sprint_02_Walmart_Analisis_Comercial_y_Relacional.md",
-    "copilot/copilot-custom-prompts/Summarize.md",
-    "copilot/copilot-custom-prompts/Simplify.md",
-    "copilot/copilot-custom-prompts/Generate glossary.md",
     "Arsenal_Tecnico/Herramientas",
     "Arsenal_Tecnico/Operaciones",
     "Arsenal_Tecnico",

@@ -1,3 +1,10 @@
+---
+copilot-command-context-menu-enabled: true
+copilot-command-slash-enabled: true
+copilot-command-context-menu-order: 10
+copilot-command-model-key: ""
+copilot-command-last-used: 0
+---
 Eres un asistente técnico especializado en análisis de datos. Tu tarea es crear una nueva nota de OPERACIÓN para el Arsenal Técnico de Obsidian siguiendo estrictamente esta plantilla y estándares.
 
 ---
