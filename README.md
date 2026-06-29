@@ -22,6 +22,7 @@ A continuación se presenta el desglose analítico de los proyectos disponibles 
 | **Análisis de Comportamiento del Consumidor - NovaRetail** | Python (Pandas, Visualización de Datos) | Segmentación de clientes y análisis exploratorio de datos (EDA) enfocados en identificar patrones de compra, estacionalidad y optimización del ciclo de vida del consumidor. | [Ver Notebook (S8)](https://github.com/EstefGlez/Portafolio-Sprints-TripleTen/blob/main/S8%20Student%20Version-Project-NovaRetail.ipynb) |
 | **Análisis de Experimento y Optimización de Conversión - Landing Page** | Python, Análisis Estadístico / Pruebas A/B | Evaluación de métricas de conversión mediante pruebas de hipótesis estadísticas para validar cambios de diseño y mejorar el rendimiento del funnel en la landing page. | [Ver Notebook (S9)](https://github.com/EstefGlez/Portafolio-Sprints-TripleTen/blob/main/S9%20Version_Student_Proyecto_Landing_Experiment.ipynb) |
 | **Dashboard de Rendimiento Comercial y Estacionalidad - Andes Retail** | Power BI, Modelado DAX, SCQA | Análisis de tendencias de ingresos 2024-2025 y cálculo de la Participación Departamental (% de ventas semanales del departamento respecto al total). | [Ver Dashboard (S10)](https://github.com/EstefGlez/Portafolio-Sprints-TripleTen/tree/main/Sprint%2010) |
+| **Análisis Comercial Inmobiliario - Grupo Andes** | Power BI, Modelado DAX (CALCULATE, ALL, Time Intelligence) | Dashboard ejecutivo interactivo de 3 vistas (Overview, Comercial y Cohortes) para el periodo 2023-2024. Identificación de Ingresos Totales por $6,012.50M y el liderazgo del canal Corredor con un 72.85% de participación. | [Ver Dashboard (S11)](https://github.com/EstefGlez/Portafolio-Sprints-TripleTen/tree/main/Sprint%2011) |
 
 ### 🧠 Base de Conocimiento y Notas de Estudio
 | Repositorio de Documentación | Enfoque Principal | Contenido Destacado | Acceso Directo |
@@ -33,7 +34,7 @@ A continuación se presenta el desglose analítico de los proyectos disponibles 
 ## 🛠️ Stack Tecnológico Profesional
 * **Lenguajes de Consulta y Programación:** SQL (PostgreSQL, queries avanzados, subconsultas, CTEs) y Python (Pandas, NumPy).
 * **Visualización de Datos y BI:** Power BI (Diseño UX/UI de dashboards, modelado de datos estrella, DAX avanzado), Seaborn y Matplotlib.
-* **Metodologías Analíticas:** Análisis de cohortes, optimización de funnels de conversión, pruebas A/B, análisis estadístico y framework estructural SCQA.
+* **Metodologías Analíticas:** Análisis de cohortes, optimización de funnels de conversión, pruebas A/B, análisis de estacionalidad comercial y framework estructural SCQA.
 * **Entorno y Control de Versiones:** Git (Flujos de trabajo Gitflow a través de terminal), VS Code, entornos virtuales dedicados (`env`) y Linux (Ubuntu).
 * **Productividad y Documentación:** Obsidian (Markdown bi-direccional para bases de conocimiento).
 
