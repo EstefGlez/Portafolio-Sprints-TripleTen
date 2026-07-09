@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "3b083cd8effd9df5",
+        "id": "6f388f30c0405fc1",
         "type": "tabs",
         "children": [
           {
-            "id": "1d842e82a6dd198b",
+            "id": "18395d7ef2675835",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Arsenal_Tecnico/Herramientas/Git_GitHub.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Git_GitHub"
+              "title": "Nueva pestaña"
             }
           }
         ]
@@ -192,8 +188,15 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "1d842e82a6dd198b",
+  "active": "7677d3759833f7f7",
   "lastOpenFiles": [
+    "copilot/copilot-conversations/Recuerdos_compartidos@20260707_133636.md",
+    "copilot/copilot-conversations/Proyecto_12_en_Power_BI@20260707_162208.md",
+    "copilot/copilot-conversations/Planificación_de_proyecto_Tripleten@20260630_064605.md",
+    "copilot/copilot-conversations/Contexto_de_planificación_de_proyecto@20260630_135201.md",
+    "copilot/copilot-conversations/Retomar_planificación_de_proyecto@20260706_182948.md",
+    "Arsenal_Tecnico/Operaciones/Analisis_Estadistico.md",
+    "Arsenal_Tecnico/Herramientas/Git_GitHub.md",
     "Arsenal_Tecnico/Operaciones/Visualizacion.md",
     "Arsenal_Tecnico/Herramientas/Matplotlib_Seaborn.md",
     "copilot/copilot-conversations/Metodología_de_estrella_explicada@20260624_205940.md",
@@ -212,21 +215,14 @@
     "copilot/copilot-custom-prompts/Plantilla_Herramienta (1).md",
     "copilot/copilot-custom-prompts/Sin confirmar 864287.crdownload",
     "copilot/copilot-custom-prompts/Sin confirmar 194685.crdownload",
-    "Arsenal_Tecnico/Herramientas/Git_GitHub.md",
     "copilot/copilot-custom-prompts/Plantilla_Operacion.md",
     "Herramienta_1.md",
     "copilot/copilot-conversations/Problema_visualización_plantillas_notas@20260623_183714.md",
     "Herramienta_2.md",
     "Nombre_Operacion_Anterior.md",
     "Nombre_Nota.md",
-    "Arsenal_Tecnico/Operaciones/Analisis_Estadistico.md",
     "Arsenal_Tecnico/Herramientas/Pandas.md",
     "Arsenal_Tecnico/Analisis_Estadistico.md",
-    "Arsenal_Tecnico/Pandas.md",
-    "Arsenal_Tecnico/Herramientas/SQL.md",
-    "copilot/copilot-conversations/Análisis_de_tu_bóveda_digital@20260623_002743.md",
-    "copilot/copilot-conversations/Análisis_de_bóveda_Arsenal_Tecnico@20260623_124557.md",
-    "copilot/copilot-custom-prompts/Plantilla Sprint.md",
     "Arsenal_Tecnico/Herramientas",
     "Arsenal_Tecnico/Operaciones",
     "Arsenal_Tecnico",
