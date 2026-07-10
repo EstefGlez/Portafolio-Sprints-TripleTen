@@ -11,10 +11,10 @@
             "id": "18395d7ef2675835",
             "type": "leaf",
             "state": {
-              "type": "empty",
+              "type": "graph",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Nueva pestaña"
+              "icon": "lucide-git-fork",
+              "title": "Vista gráfica"
             }
           }
         ]
@@ -188,7 +188,7 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "7677d3759833f7f7",
+  "active": "18395d7ef2675835",
   "lastOpenFiles": [
     "copilot/copilot-conversations/Recuerdos_compartidos@20260707_133636.md",
     "copilot/copilot-conversations/Proyecto_12_en_Power_BI@20260707_162208.md",

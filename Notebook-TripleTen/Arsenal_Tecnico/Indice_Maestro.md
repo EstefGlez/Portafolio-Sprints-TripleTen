@@ -39,6 +39,11 @@ Mapa central de todas las herramientas y operaciones del bootcamp. Punto de entr
 | ⚙️ Jupyter en VS Code | S5, S7, S8, S9 | [[Jupyter_VSCode]] |
 | 📉 Matplotlib & Seaborn | S5, S7, S8, S9 | [[Matplotlib_Seaborn]] |
 | 🔢 NumPy | S5, S7, S8, S9 | [[Numpy]] |
+| 🔌 Python + SQL (sqlalchemy) | S12 | [[Python_SQL]] |
+| 💹 KPIs Financieros en Python | S12 | [[KPIs_Financieros_Python]] |
+| 🌊 Funnel y Cohortes S12 | S12 | [[Funnel_y_Cohortes_S12]] |
+| 📐 DAX Avanzado (SUMX, RELATED) | S12 | [[DAX_Avanzado_S12]] |
+| 🔌 Python + SQL | S12 | [[Python_SQL]] |
 | 🌿 Git & GitHub | Todos | [[Git_GitHub]] |
 
 ---
@@ -80,3 +85,4 @@ Objetivo de la sesión: [DESCRIBIR]
 | S9 | Pruebas A/B Landing Page | Python / SciPy + statsmodels | Chi-cuadrado, T-test, Levene, Z-test proporciones, V de Cramér, Fisher, Shapiro-Wilk |
 | S10 | Andes Retail Group | Power BI | 2 vistas, Nivel_Venta, KPIs macro, SCQA, análisis por segmento |
 | S11 | Ventas inmobiliarias — BI Comercial | Power BI / DAX | Star Schema, CALENDAR, CALCULATE+ALL, ALLEXCEPT, YTD, MTD, YoY, Cohortes, Eje dual, Semáforo |
+| S12 | RappiPlus — Proyecto Final | Python + SQL + Power BI | pd.read_sql, merge seguro, KPIs financieros, funnel SQL, cohortes LEFT JOIN, SUMX+RELATED, drill-through |

@@ -232,3 +232,72 @@ Cuando los nombres de columnas (`id_cliente`, `ciudad`) aparecen como datos en l
 - **DAX utilizado:** [[DAX_Modelado_PowerBI]]
 - **Modelo base:** [[Modelado_Star_Schema]]
 - **Sprint de referencia:** S11 — Ventas de propiedades inmobiliarias (Grupo Andes)
+
+---
+
+## 🔌 Conexión Python → Power BI (Flujo de datos) {#python-to-pbi}
+
+**Cuándo:** Cuando limpias datos en Python y necesitas cargarlos a Power BI para construir el dashboard.
+
+```python
+# Exportar DataFrames limpios desde Python
+orders.to_csv('orders_clean.csv',    index=False)
+catalog.to_csv('catalog_clean.csv',  index=False)
+marketing.to_csv('marketing_clean.csv', index=False)
+```
+
+Luego en Power BI: **Obtener datos > Texto/CSV** → cargar los `_clean.csv`.
+
+> [!IMPORTANT] Normalizar llaves de cruce ANTES de exportar
+> Si exportas con diferencias de capitalización en `nombre_producto`, Power BI tendrá los mismos problemas de M:M que tuviste en Python. Aplicar `.str.lower().str.strip()` antes del `.to_csv()`.
+
+**Contexto real:** S12 — Pipeline completo: Python (limpieza) → CSV → Power BI (modelado y visualización).
+
+---
+
+## ⚠️ Solución al Error M:M (Muchos a Muchos) {#error-mm}
+
+**Cuándo:** Power BI sugiere una relación M:M al intentar conectar dos tablas.
+
+**Causas más comunes:**
+1. Columnas de fecha con tipos distintos (`Date` vs `DateTime`) entre tablas
+2. Duplicados en la columna que debería ser clave primaria de la dimensión
+3. Intentar relacionar dos tablas de hechos directamente sin pasar por una dimensión
+
+**Solución estándar — crear `dim_fecha` como hub:**
+```dax
+dim_fecha = 
+VAR BaseCalendar = 
+    CALENDAR(
+        MIN(MIN(orders_clean[fecha_hora_pedido]), MIN(marketing_clean[fecha])),
+        MAX(MAX(orders_clean[fecha_hora_pedido]), MAX(marketing_clean[fecha]))
+    )
+RETURN
+    ADDCOLUMNS(
+        BaseCalendar,
+        "Año",           YEAR([Date]),
+        "Mes",           FORMAT([Date], "MMMM"),
+        "Mes Número",    MONTH([Date]),
+        "Año-Mes",       FORMAT([Date], "YYYY-MM"),
+        "Trimestre",     "Q" & FORMAT([Date], "Q")
+    )
+```
+
+Luego crear dos relaciones `1:*`:
+- `dim_fecha[Date]` → `orders_clean[fecha_hora_pedido]`
+- `dim_fecha[Date]` → `marketing_clean[fecha]`
+
+> [!NOTE] Nunca relacionar dos tablas de hechos directamente
+> `orders_clean` y `marketing_clean` son ambas tablas de hechos. Relacionarlas directamente siempre da M:M. La `dim_fecha` actúa como "hub" que las conecta indirectamente.
+
+**Contexto real:** S12 — Error M:M al intentar relacionar `orders_clean` con `marketing_clean` por fecha. Se resolvió creando `dim_fecha` como dimensión central.
+
+---
+
+## 📌 Sprints donde se usaron estas visualizaciones avanzadas
+
+| Sprint | Proyecto | Técnicas aplicadas |
+|---|---|---|
+| S10 | Andes Retail Group | Eje dual, semáforo, tooltips, navegación, formato condicional |
+| S11 | Ventas inmobiliarias | Drill-through, cohortes, matriz de retención |
+| S12 | RappiPlus | Conexión Python→PBI, solución M:M, SUMX+RELATED, drill-through |
