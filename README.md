@@ -7,7 +7,7 @@ Bienvenido a mi portafolio profesional de análisis de datos y business intellig
 
 ---
 
-## ⭐ Proyectos Destacados
+## 📌 Proyectos Destacados
 
 Estos tres proyectos son mi selección más reciente e intencional: cada uno tiene su propio `README.md` dentro de su carpeta, con el desafío de negocio, el proceso técnico, el resultado y la lección aprendida — no solo el código.
 
