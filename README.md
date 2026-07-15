@@ -1,7 +1,7 @@
-# Portafolio de Proyectos - Ciencias de Datos y Análisis de Negocios
+# Portafolio de Análisis de Datos y Business Intelligence
 
 **Estefano Gonzalez Bravo**  
-*Sistemas de Ingeniería y Analista de Datos*
+*Ingeniería en Sistemas | Analista de Datos*
 
 Bienvenido a mi portafolio profesional de análisis de datos y business intelligence. Este repositorio centraliza los proyectos prácticos y sprints desarrollados para resolver problemas estratégicos de negocio, optimización de ingresos y comportamiento de usuarios mediante el uso de SQL (PostgreSQL), Python (Pandas, Seaborn, Matplotlib) y Power BI.
 
