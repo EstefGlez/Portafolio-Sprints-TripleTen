@@ -45,7 +45,7 @@ A continuación, el resto de los proyectos del portafolio, organizados por su en
 * **Lenguajes de Consulta y Programación:** SQL (PostgreSQL, queries avanzados, subconsultas, CTEs, INTERSECT) y Python (Pandas, NumPy, SciPy, Statsmodels).
 * **Visualización de Datos y BI:** Power BI (Diseño UX/UI de dashboards, modelado de datos estrella, DAX avanzado), Seaborn y Matplotlib.
 * **Metodologías Analíticas:** Análisis de cohortes, optimización de funnels de conversión, pruebas A/B de proporciones (Z-test), análisis de estacionalidad comercial y framework estructural SCQA.
-* **Entorno y Control de Versiones:** Git (Flujos de trabajo Gitflow a través de terminal), VS Code y entornos virtuales dedicados (`env`).
+* **Entorno y Control de Versiones:** Git (Flujos de trabajo a través de terminal), VS Code y entornos virtuales dedicados (`env`).
 * **Productividad y Documentación:** Obsidian (Markdown bi-direccional para bases de conocimiento).
 
 <br>
