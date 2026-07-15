@@ -22,9 +22,9 @@ chi2_stat, p_value, dof, expected = chi2_contingency(tabla_landing)
 
 ## Visuales
 
-<img width="1644" height="988" alt="s9_chi2_resumen" src="https://github.com/user-attachments/assets/9ad48258-b052-4725-8790-46ad3636f75f" />
-<img width="2147" height="1070" alt="s9_ab_resultado" src="https://github.com/user-attachments/assets/2d9b71fd-7936-4b44-8cbf-517cabe0e6ee" />
 <img width="2147" height="1079" alt="s9_conversion_segmentos" src="https://github.com/user-attachments/assets/790767b8-9ceb-4a8f-8733-6da6bdff00f1" />
+<img width="2147" height="1070" alt="s9_ab_resultado" src="https://github.com/user-attachments/assets/2d9b71fd-7936-4b44-8cbf-517cabe0e6ee" />
+<img width="1644" height="988" alt="s9_chi2_resumen" src="https://github.com/user-attachments/assets/9ad48258-b052-4725-8790-46ad3636f75f" />
 
 ## Lección
 
