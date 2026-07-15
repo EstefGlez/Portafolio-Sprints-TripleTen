@@ -30,7 +30,7 @@ paso_3 AS (
 
 ## Visuales
 
-<img width="1612" height="1083" alt="s12_rentabilidad" src="https://github.com/user-attachments/assets/d07ae1b9-b356-49e6-a1e1-e7f866b794cd" />
+<img width="1612" height="1083" alt="s12_rentabilidad" src="https://github.com/user-attachments/assets/fa1cb63d-77fb-4ee3-8ca8-4e36e03cb9d4" />
 <img width="1434" height="898" alt="s12_experimento_checkout" src="https://github.com/user-attachments/assets/6c0d9532-170b-4ccf-b763-ce1da85770c8" />
 <img width="1790" height="1262" alt="s12_funnel" src="https://github.com/user-attachments/assets/78758552-7ebf-48ff-ba9e-132aebf6c04b" />
 
