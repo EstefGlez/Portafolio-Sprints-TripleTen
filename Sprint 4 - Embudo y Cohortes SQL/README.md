@@ -24,7 +24,9 @@ Identifiqué una caída crítica de **65.88 puntos porcentuales entre `select_it
 
 ## Visuales
 
-*(Agregar aquí: captura de la tabla de conversión por país y del mapa de calor de retención por cohorte.)*
+<img width="1345" height="1263" alt="retencion_por_cohorte" src="https://github.com/user-attachments/assets/259b6445-db93-42ec-a141-a291e928dc56" />
+<img width="1959" height="1263" alt="embudo_por_pais" src="https://github.com/user-attachments/assets/74f6f5ba-ac56-408f-9a22-1d9f2201c2ad" />
+
 
 ## Lección
 
