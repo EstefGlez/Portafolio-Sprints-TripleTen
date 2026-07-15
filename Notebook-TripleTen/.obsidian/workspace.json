@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "6f388f30c0405fc1",
+        "id": "6274a2e669a9f3f9",
         "type": "tabs",
         "children": [
           {
-            "id": "18395d7ef2675835",
+            "id": "7e15b11626da2836",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -173,8 +173,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -188,8 +187,9 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "18395d7ef2675835",
+  "active": "7e15b11626da2836",
   "lastOpenFiles": [
+    "copilot/copilot-conversations/Pasos_iniciales_análisis_datos@20260711_164420.md",
     "copilot/copilot-conversations/Recuerdos_compartidos@20260707_133636.md",
     "copilot/copilot-conversations/Proyecto_12_en_Power_BI@20260707_162208.md",
     "copilot/copilot-conversations/Planificación_de_proyecto_Tripleten@20260630_064605.md",
@@ -222,7 +222,6 @@
     "Nombre_Operacion_Anterior.md",
     "Nombre_Nota.md",
     "Arsenal_Tecnico/Herramientas/Pandas.md",
-    "Arsenal_Tecnico/Analisis_Estadistico.md",
     "Arsenal_Tecnico/Herramientas",
     "Arsenal_Tecnico/Operaciones",
     "Arsenal_Tecnico",

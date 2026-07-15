@@ -363,6 +363,105 @@ $$\alpha = 0.05$$
 
 ## 🔗 Conexiones Estratégicas
 
+- **Índice Maestro:** [[Indice_Maestro]]
+
 - **Herramientas:** [[Pandas]] | `scipy.stats` | `statsmodels`
 - **Operación previa:** [[Transformacion_y_Feature_Engineering]]
 - **Sprint de referencia:** S9 Landing Page | S8 NovaRetail
+
+---
+
+## 🔧 Función Reutilizable: V de Cramér {#cramer-funcion}
+
+**Herramienta:** Python (SciPy + NumPy)
+**Cuándo:** Cuando necesitas calcular V de Cramér para múltiples pares de variables categóricas. En lugar de repetir el cálculo manualmente, encapsularlo en una función limpia y reutilizable.
+
+```python
+from scipy.stats import chi2_contingency
+import numpy as np
+
+def cramers_v(df, col_1, col_2):
+    """
+    Calcula el coeficiente V de Cramér entre dos variables categóricas.
+    
+    Parámetros:
+        df    : DataFrame que contiene las columnas
+        col_1 : nombre de la primera variable categórica
+        col_2 : nombre de la segunda variable categórica
+    
+    Retorna:
+        float: V de Cramér entre 0 (sin asociación) y 1 (asociación perfecta)
+    """
+    tabla = pd.crosstab(df[col_1], df[col_2])
+    chi2, _, _, _ = chi2_contingency(tabla)
+    n = tabla.values.sum()
+    return np.sqrt(chi2 / (n * (min(tabla.shape) - 1)))
+
+# Uso: comparar múltiples pares de variables categóricas
+print(f"V de Cramér (dispositivo vs region):       {cramers_v(df, 'tipo_dispositivo', 'region'):.3f}")
+print(f"V de Cramér (dispositivo vs satisfaccion): {cramers_v(df, 'tipo_dispositivo', 'satisfaccion_cat'):.3f}")
+print(f"V de Cramér (region vs satisfaccion):      {cramers_v(df, 'region', 'satisfaccion_cat'):.3f}")
+```
+
+> [!TIP] Esta función es candidata a la carpeta Funciones/
+> Es reutilizable en cualquier proyecto con variables categóricas. Solo cambia `df`, `col_1` y `col_2`.
+
+**Contexto real:** S8 NovaRetail — comparación de asociación entre `tipo_dispositivo`, `region` y `satisfaccion_cat`.
+
+---
+
+## 📐 Correlación de Pearson Par a Par (con print) {#pearson-par}
+
+**Cuándo:** Cuando necesitas extraer y comunicar coeficientes de correlación individuales entre pares específicos identificados en el heatmap, con etiquetas descriptivas.
+
+```python
+# Correlaciones individuales para los pares más relevantes del heatmap
+corr_ingreso_compras     = df['ingreso_anual'].corr(df['compras_mes'], method='pearson')
+corr_publicidad_visitas  = df['gasto_publicidad_dirigida'].corr(df['visitas_mes'], method='pearson')
+corr_compras_visitas     = df['compras_mes'].corr(df['visitas_mes'], method='pearson')
+
+print(f"Correlación fuerte         (ingreso_anual vs compras_mes):          {corr_ingreso_compras:.3f}")
+print(f"Correlación moderada       (gasto_publicidad vs visitas_mes):        {corr_publicidad_visitas:.3f}")
+print(f"Correlación débil-moderada (compras_mes vs visitas_mes):             {corr_compras_visitas:.3f}")
+```
+
+> [!NOTE] Pearson par a par vs. matriz completa
+> La matriz `.corr()` es útil para exploración visual (heatmap). Los coeficientes individuales son para el reporte ejecutivo — permiten citar el número exacto con su interpretación.
+
+**Contexto real:** S8 NovaRetail — extracción de coeficientes para los 4 pares con mayor correlación observada en el heatmap.
+
+---
+
+## 🧪 T-test sobre Subconjunto Filtrado (usuarios convertidos) {#ttest-filtrado}
+
+**Cuándo:** Cuando el test estadístico solo aplica a un subgrupo del dataset (ej. comparar gasto solo entre usuarios que convirtieron, no entre todos).
+
+```python
+from scipy.stats import ttest_ind
+
+# Filtrar solo el subgrupo relevante antes del test
+df_convertidos = df[df["converted"] == 1]
+
+# Separar por grupo experimental
+gasto_A = df_convertidos[df_convertidos["landing"] == "A"]["gasto"]
+gasto_B = df_convertidos[df_convertidos["landing"] == "B"]["gasto"]
+
+# T-test con equal_var=False (varianzas no asumidas iguales — más seguro)
+t_stat, p_value = ttest_ind(gasto_A, gasto_B, equal_var=False)
+
+print(f"Gasto promedio página A: {gasto_A.mean():.2f}")
+print(f"Gasto promedio página B: {gasto_B.mean():.2f}")
+print(f"t-stat : {t_stat:.4f}")
+print(f"p-value: {p_value:.4e}")
+
+alpha = 0.05
+if p_value < alpha:
+    print("Decisión: se rechaza H0 — el gasto promedio difiere significativamente.")
+else:
+    print("Decisión: no se rechaza H0 — no hay diferencia significativa en el gasto.")
+```
+
+> [!IMPORTANT] Filtrar ANTES del test, no dentro
+> Si pasas el DataFrame completo al t-test y filtras dentro, el tamaño de muestra (`n`) queda mal calculado. Siempre crear el subconjunto explícito antes de llamar a `ttest_ind`.
+
+**Contexto real:** S9 Landing Page — comparación del gasto promedio entre usuarios convertidos de la versión A vs B.

@@ -247,6 +247,101 @@ ROUND(usuarios_purchase * 100.0 / NULLIF(usuarios_first_visit, 0), 2) AS convers
 
 ## 🔗 Conexiones Estratégicas
 
+- **Índice Maestro:** [[Indice_Maestro]]
+
 - **Herramientas:** [[Pandas]] | [[SQL]]
 - **Operación previa:** [[Carga_y_Exploracion]]
 - **Siguiente operación:** [[Agregacion_y_Reportes]]
+
+---
+
+## 🔁 Estandarización de Pipeline Completo en Función {#pipeline-funcion}
+
+**Herramienta:** Pandas
+**Cuándo:** Cuando tienes múltiples DataFrames que necesitan exactamente la misma limpieza (snake_case + normalize + fillna). Encapsular el pipeline en una función evita repetir el mismo bloque 3 veces.
+
+```python
+def limpiar_dataframe(df, cols_fecha=None, cols_categoricas=None, cols_fillna=None):
+    """
+    Pipeline estándar de limpieza para DataFrames del proyecto.
+    
+    Parámetros:
+        df              : DataFrame a limpiar
+        cols_fecha      : lista de columnas a convertir a datetime
+        cols_categoricas: lista de columnas a normalizar (lower + strip)
+        cols_fillna     : dict {columna: valor_fill} para imputar nulos
+    
+    Retorna:
+        DataFrame limpio (in-place no; devuelve copia)
+    """
+    df = df.copy()
+    
+    # Snake_case en nombres de columnas
+    df.columns = [col.lower().replace(' ', '_') for col in df.columns]
+    
+    # Convertir fechas
+    if cols_fecha:
+        for col in cols_fecha:
+            df[col] = pd.to_datetime(df[col], errors='coerce')
+    
+    # Normalizar texto
+    if cols_categoricas:
+        for col in cols_categoricas:
+            df[col] = df[col].str.lower().str.strip()
+    
+    # Imputar nulos categóricos
+    if cols_fillna:
+        for col, valor in cols_fillna.items():
+            df[col] = df[col].fillna(valor)
+    
+    return df
+
+# Uso en S12
+orders = limpiar_dataframe(
+    orders,
+    cols_fecha       = ['fecha_hora_pedido'],
+    cols_categoricas = ['nombre_producto', 'categoria_producto', 'pais'],
+    cols_fillna      = {'dispositivo': 'desconocido', 'fuente_referencia': 'desconocido'}
+)
+```
+
+> [!TIP] Esta función es candidata a la carpeta Funciones/
+> Con parámetros opcionales (`None` por defecto), es adaptable a cualquier proyecto sin modificar su código interno.
+
+**Contexto real:** S12 — Pipeline de limpieza aplicado a `orders`, `catalog` y `marketing` con diferentes configuraciones por DataFrame.
+
+---
+
+## 🔍 Verificación Post-Limpieza Estandarizada {#verificacion-post}
+
+**Herramienta:** Pandas
+**Cuándo:** Después de cada fase de limpieza, para confirmar que el resultado es el esperado antes de continuar. Bloque reutilizable que imprime el estado del DataFrame.
+
+```python
+def verificar_df(df, nombre):
+    """Imprime un resumen de estado del DataFrame para QA."""
+    print(f"\n{'='*40}")
+    print(f"  QA: {nombre}")
+    print(f"{'='*40}")
+    print(f"  Dimensiones: {df.shape}")
+    print(f"  Nulos totales: {df.isna().sum().sum()}")
+    nulos = df.isna().sum()
+    nulos_cols = nulos[nulos > 0]
+    if len(nulos_cols) > 0:
+        print(f"  Columnas con nulos:")
+        for col, n in nulos_cols.items():
+            print(f"    - {col}: {n}")
+    else:
+        print("  ✅ Sin nulos")
+    print(f"  Duplicados: {df.duplicated().sum()}")
+
+# Uso
+verificar_df(orders,    "orders_clean")
+verificar_df(catalog,   "catalog_clean")
+verificar_df(marketing, "marketing_clean")
+```
+
+> [!TIP] También candidata a Funciones/
+> Reemplaza el bloque `print(orders.isna().sum())` que se repite en todos los proyectos. Un solo `verificar_df(df, nombre)` da más información en menos líneas.
+
+**Contexto real:** S12 — QA post-limpieza de los tres DataFrames antes de exportar a CSV.

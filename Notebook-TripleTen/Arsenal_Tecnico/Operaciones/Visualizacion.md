@@ -234,6 +234,117 @@ plt.show()
 
 ## 🔗 Conexiones Estratégicas
 
+- **Índice Maestro:** [[Indice_Maestro]]
+
 - **Herramientas:** [[Pandas]] | `matplotlib.pyplot` | `seaborn`
 - **Operación previa:** [[Analisis_Estadistico]]
 - **Sprint de referencia:** S5 LADB | S7 ConnectaTel | S8 NovaRetail | S9 Landing Page
+
+---
+
+## 📊 Subplots 2x2 con Scatterplots Múltiples {#subplots-scatter}
+
+**Herramienta:** Matplotlib + Seaborn
+**Cuándo:** Para explorar visualmente múltiples relaciones entre pares de variables numéricas en una sola figura. Más legible que el `pairplot` cuando quieres controlar exactamente qué pares mostrar.
+
+```python
+fig, axes = plt.subplots(2, 2, figsize=(14, 10))
+
+# Par 1: Ingreso anual vs Compras
+sns.scatterplot(data=df, x='ingreso_anual', y='compras_mes', ax=axes[0, 0], alpha=0.5)
+axes[0, 0].set_title('Ingreso Anual vs Compras/Mes')
+
+# Par 2: Gasto publicidad vs Visitas
+sns.scatterplot(data=df, x='gasto_publicidad_dirigida', y='visitas_mes', ax=axes[0, 1], alpha=0.5)
+axes[0, 1].set_title('Gasto Publicidad vs Visitas/Mes')
+
+# Par 3: Compras vs Visitas
+sns.scatterplot(data=df, x='compras_mes', y='visitas_mes', ax=axes[1, 0], alpha=0.5)
+axes[1, 0].set_title('Compras vs Visitas/Mes')
+
+# Par 4: Tiempo en sitio vs Compras
+sns.scatterplot(data=df, x='tiempo_en_sitio', y='compras_mes', ax=axes[1, 1], alpha=0.5)
+axes[1, 1].set_title('Tiempo en Sitio vs Compras/Mes')
+
+plt.suptitle('Análisis de Correlaciones — Pares Seleccionados', fontsize=14, y=1.02)
+plt.tight_layout()
+plt.show()
+```
+
+**Parámetros clave:**
+- `alpha=0.5` — transparencia para ver densidad de puntos cuando hay solapamiento
+- `axes[fila, col]` — referencia exacta a cada subplot en la cuadrícula
+- `plt.suptitle()` — título global de la figura (diferente al `set_title` de cada subplot)
+- `y=1.02` en `suptitle` — evita que el título global se encime con los subtítulos
+
+> [!TIP] Subplots 2x2 vs pairplot
+> `pairplot` genera todos los pares automáticamente — ideal para exploración inicial. Subplots 2x2 manuales son para el reporte final cuando ya sabes exactamente qué pares son relevantes y quieres controlar el diseño.
+
+**Contexto real:** S8 NovaRetail — visualización de los 4 pares con mayor correlación identificados en el heatmap previo.
+
+---
+
+## 📦 Boxplot Comparativo A vs B (A/B Testing) {#boxplot-ab}
+
+**Herramienta:** Seaborn + Matplotlib
+**Cuándo:** Para visualizar la distribución del gasto (u otra métrica numérica) entre dos grupos experimentales antes de aplicar el t-test. El boxplot muestra medianas, IQR y outliers — complementa el p-value con contexto visual.
+
+```python
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+
+# Boxplot del gasto por grupo (todos los usuarios)
+sns.boxplot(data=df, x='landing', y='gasto', ax=axes[0], palette=['#4C72B0', '#DD8452'])
+axes[0].set_title('Distribución del Gasto por Versión de Landing')
+axes[0].set_xlabel('Versión de Landing Page')
+axes[0].set_ylabel('Gasto ($)')
+
+# Boxplot del gasto solo entre convertidos
+df_conv = df[df['converted'] == 1]
+sns.boxplot(data=df_conv, x='landing', y='gasto', ax=axes[1], palette=['#4C72B0', '#DD8452'])
+axes[1].set_title('Gasto entre Usuarios Convertidos')
+axes[1].set_xlabel('Versión de Landing Page')
+axes[1].set_ylabel('Gasto ($)')
+
+plt.tight_layout()
+plt.show()
+```
+
+> [!NOTE] Siempre visualizar antes del test estadístico
+> El boxplot permite detectar outliers extremos que podrían inflar el t-stat. Si hay outliers severos, considera filtrarlos o usar la prueba Mann-Whitney U (no paramétrica) en lugar del t-test.
+
+**Contexto real:** S9 Landing Page — comparación visual de la distribución del gasto entre la versión A y B, tanto global como solo para usuarios convertidos.
+
+---
+
+## 📈 Barplot de Tasa de Conversión por Grupo {#barplot-conversion}
+
+**Herramienta:** Seaborn + Matplotlib
+**Cuándo:** Para visualizar y comparar la tasa de conversión (proporción de éxitos) entre grupos en un A/B test, antes de aplicar el Z-test de proporciones.
+
+```python
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+
+# Conversión por fuente de tráfico
+tasa_fuente = df.groupby('traffic_source')['converted'].mean().reset_index()
+sns.barplot(data=tasa_fuente, x='traffic_source', y='converted',
+            palette='Blues_d', ax=axes[0])
+axes[0].set_title('Tasa de Conversión por Fuente de Tráfico')
+axes[0].set_ylabel('Tasa de Conversión')
+axes[0].set_xlabel('Fuente')
+
+# Conversión por dispositivo
+tasa_device = df.groupby('device')['converted'].mean().reset_index()
+sns.barplot(data=tasa_device, x='device', y='converted',
+            palette='Oranges_d', ax=axes[1])
+axes[1].set_title('Tasa de Conversión por Dispositivo')
+axes[1].set_ylabel('Tasa de Conversión')
+axes[1].set_xlabel('Dispositivo')
+
+plt.tight_layout()
+plt.show()
+```
+
+> [!NOTE] `.mean()` sobre columna binaria = tasa de conversión
+> Cuando `converted` es 0/1, la media es directamente la proporción de éxitos. `groupby('grupo')['converted'].mean()` es el atajo estándar para calcular tasas de conversión por segmento.
+
+**Contexto real:** S9 Landing Page — visualización de tasas de conversión por `traffic_source` y `device` previo al Z-test y Chi-cuadrado.

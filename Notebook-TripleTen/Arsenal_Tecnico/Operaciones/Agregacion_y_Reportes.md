@@ -118,6 +118,72 @@ Formato de la celda: `0.0%`
 
 ## 🔗 Conexiones Estratégicas
 
+- **Índice Maestro:** [[Indice_Maestro]]
+
 - **Herramienta completa:** [[Google_Sheets]]
 - **Operación previa:** [[Limpieza_y_Normalizacion]]
 - **Proyecto de referencia:** Sprint 1 — Top Ciudad: Monterrey `$541,137.36` | Top Producto: Tablet `672 unidades`
+
+---
+
+## 🏆 Producto Más Vendido por Volumen de Unidades {#top-producto-volumen}
+
+**Herramienta:** Pandas
+**Cuándo:** Para identificar el producto estrella por unidades físicas vendidas (no por frecuencia de aparición en pedidos). Útil para decisiones de inventario y producción.
+
+```python
+# Top productos por volumen total de unidades
+top_productos = (
+    orders.groupby('nombre_producto')['cantidad']
+    .sum()
+    .sort_values(ascending=False)
+    .reset_index()
+)
+top_productos.columns = ['nombre_producto', 'unidades_vendidas']
+
+print("Top 5 productos por volumen de unidades:")
+print(top_productos.head(5))
+
+# Solo el #1
+producto_estrella = top_productos.iloc[0]['nombre_producto']
+unidades_estrella = top_productos.iloc[0]['unidades_vendidas']
+print(f"\nProducto estrella: {producto_estrella} ({unidades_estrella:,.0f} unidades)")
+```
+
+**Diferencia con `value_counts()`:**
+
+| Método | Qué mide | Cuándo usarlo |
+|---|---|---|
+| `value_counts()` | Frecuencia de aparición en pedidos | Marketing — ¿qué producto atrae más clientes? |
+| `groupby().sum().sort_values()` | Unidades físicas totales vendidas | Inventario — ¿qué producto mueve más stock? |
+
+**Contexto real:** S12 RappiPlus — `Laptop-gaming-16gb` resultó ser el producto estrella con una diferencia enorme en unidades vs. los demás productos.
+
+---
+
+## 📊 Resumen Ejecutivo Multi-KPI con Print Formateado {#resumen-ejecutivo}
+
+**Herramienta:** Pandas
+**Cuándo:** Para imprimir un bloque de KPIs financieros de forma limpia y profesional al final de la sección de análisis, antes de pasar a visualizaciones.
+
+```python
+# Bloque de resumen ejecutivo
+print("=" * 50)
+print("   RESUMEN EJECUTIVO — KPIs FINANCIEROS")
+print("=" * 50)
+print(f"  Revenue total:              ${revenue:>15,.2f}")
+print(f"  Costo total productos:      ${costo_total_prod:>15,.2f}")
+print(f"  Inversión marketing:        ${inversion_marketing:>15,.2f}")
+print(f"  Profit:                     ${profit:>15,.2f}")
+print(f"  ROI:                        {roi:>14.2f}%")
+print("-" * 50)
+print(f"  Ticket promedio por orden:  ${ticket_promedio:>15,.2f}")
+print(f"  Und. promedio por orden:    {promedio_productos:>15.2f}")
+print(f"  Producto estrella:          {producto_estrella}")
+print("=" * 50)
+```
+
+> [!TIP] Alineación con `>` en f-strings
+> El especificador `>15` alinea el valor a la derecha en un campo de 15 caracteres. Hace que los números queden en columna y el reporte sea mucho más legible.
+
+**Contexto real:** S12 RappiPlus — bloque de resumen al final de la sección de KPIs antes de pasar al análisis SQL.

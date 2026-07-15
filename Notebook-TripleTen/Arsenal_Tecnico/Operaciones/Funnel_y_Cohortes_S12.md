@@ -239,3 +239,98 @@ plt.show()
 - **Operación relacionada S4:** [[SQL_Financiero_y_Metricas#embudo-ctes]] | [[SQL_Financiero_y_Metricas#cohortes]]
 - **Visualización:** [[Visualizacion#heatmap]]
 - **Sprint de referencia:** S12 — Proyecto Final RappiPlus
+
+---
+
+## 🔁 Cohortes Acumuladas — Patrón con >= N días {#cohortes-acumuladas}
+
+**Cuándo:** Alternativa al patrón `BETWEEN` cuando las instrucciones piden retención acumulada (usuarios activos **desde** el día N en adelante, no solo en esa ventana).
+
+```python
+query_cohortes_acumuladas = '''
+SELECT
+    DATE_TRUNC('month', CAST(u.fecha_registro AS DATE)) AS cohort_month,
+    COUNT(DISTINCT u.id_usuario) AS total_usuarios,
+
+    -- Retención acumulada: activo EN O DESPUÉS del día N
+    COUNT(DISTINCT CASE 
+        WHEN a.dias_despues_registro >= 7  AND a.activo = 1 
+        THEN u.id_usuario END) AS retenido_d7,
+
+    COUNT(DISTINCT CASE 
+        WHEN a.dias_despues_registro >= 14 AND a.activo = 1 
+        THEN u.id_usuario END) AS retenido_d14,
+
+    COUNT(DISTINCT CASE 
+        WHEN a.dias_despues_registro >= 21 AND a.activo = 1 
+        THEN u.id_usuario END) AS retenido_d21
+
+FROM users u
+LEFT JOIN user_activity a ON u.id_usuario = a.id_usuario
+GROUP BY 1
+ORDER BY 1;
+'''
+
+cohorte_acum = pd.read_sql(query_cohortes_acumuladas, con=engine)
+```
+
+**Diferencia clave entre los dos patrones:**
+
+| Patrón | Sintaxis SQL | Qué mide |
+|---|---|---|
+| Ventana semanal | `BETWEEN 7 AND 13` | Usuarios activos **solo** en esa semana |
+| Acumulado | `>= 7` | Usuarios activos **desde** ese día en adelante |
+
+> [!NOTE] ¿Cuál usar?
+> - `BETWEEN` → retención por período (¿volvieron esa semana específica?)
+> - `>= N` → retención acumulada (¿siguen activos después de N días?) — más común en análisis de producto
+
+**Contexto real:** S12 — Patrón visto en el contexto del S4 (MercadoLibre D7/D14/D21/D28) y aplicado también en RappiPlus.
+
+---
+
+## 🔀 Funnel con INTERSECT — Patrón Alternativo {#funnel-intersect}
+
+**Cuándo:** Para construir un funnel estricto donde cada etapa solo cuenta usuarios que **también** pasaron por todas las etapas anteriores. Diferente al patrón de `LEFT JOIN` que cuenta usuarios únicos por etapa independientemente.
+
+```python
+query_funnel_intersect = '''
+-- Usuarios que llegaron a cada etapa (y también pasaron por las anteriores)
+SELECT 'first_visit'      AS etapa, COUNT(DISTINCT id_usuario) AS usuarios, 1 AS orden
+FROM events WHERE nombre_evento = 'first_visit'
+
+UNION ALL
+
+SELECT 'select_item', COUNT(DISTINCT id_usuario), 2
+FROM events WHERE nombre_evento = 'select_item'
+AND id_usuario IN (SELECT DISTINCT id_usuario FROM events WHERE nombre_evento = 'first_visit')
+
+UNION ALL
+
+SELECT 'add_to_cart', COUNT(DISTINCT id_usuario), 3
+FROM events WHERE nombre_evento = 'add_to_cart'
+AND id_usuario IN (SELECT DISTINCT id_usuario FROM events WHERE nombre_evento = 'select_item')
+
+UNION ALL
+
+SELECT 'purchase', COUNT(DISTINCT id_usuario), 4
+FROM events WHERE nombre_evento = 'purchase'
+AND id_usuario IN (SELECT DISTINCT id_usuario FROM events WHERE nombre_evento = 'add_to_cart')
+
+ORDER BY orden;
+'''
+
+funnel_estricto = pd.read_sql(query_funnel_intersect, con=engine)
+```
+
+**Diferencia entre los dos patrones de funnel:**
+
+| Patrón | Cómo cuenta | Cuándo usarlo |
+|---|---|---|
+| `COUNT(DISTINCT) + WHERE IN (...)` | Solo usuarios que pasaron por etapas previas | Funnel estricto y secuencial |
+| `COUNT(DISTINCT) + GROUP BY evento` | Todos los usuarios únicos por etapa, independientemente | Funnel de alcance (más común) |
+
+> [!NOTE] Los resultados pueden diferir significativamente
+> El patrón con `IN` siempre da números menores o iguales al patrón de `GROUP BY`, porque filtra usuarios que saltaron etapas. Elige según lo que quiera medir el negocio.
+
+**Contexto real:** S12 — Patrón alternativo para análisis de funnel estricto donde cada etapa es prerequisito de la siguiente.

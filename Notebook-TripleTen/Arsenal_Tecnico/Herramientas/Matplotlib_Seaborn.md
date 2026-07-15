@@ -224,5 +224,27 @@ sns.countplot(
 ## 🔗 Conexiones Estratégicas
 
 - **Índice Maestro:** [[Indice_Maestro]]
+
+- **Índice Maestro:** [[Indice_Maestro]]
 - **Nota de operación:** [[Visualizacion]] | [[Analisis_Estadistico]]
 - **Herramienta relacionada:** [[Pandas]] | [[Numpy]]
+
+---
+
+## 📌 Actualización S8/S9 — Patrones Nuevos
+
+### 📊 Nuevas visualizaciones documentadas
+| Visual | Cuándo usarlo | Nota |
+|---|---|---|
+| Subplots 2x2 de scatterplots | Explorar múltiples pares de correlación en una figura | [[Visualizacion#subplots-scatter]] |
+| Boxplot comparativo A vs B | Comparar distribuciones entre grupos experimentales | [[Visualizacion#boxplot-ab]] |
+| Barplot de tasa de conversión | Visualizar proporciones por segmento antes del Z-test | [[Visualizacion#barplot-conversion]] |
+
+### 🎨 Parámetros nuevos documentados
+
+| Parámetro | Función | Qué hace |
+|---|---|---|
+| `alpha=0.5` | `sns.scatterplot()` | Transparencia para ver densidad de puntos solapados |
+| `plt.suptitle(texto, y=1.02)` | `plt.figure()` | Título global de figura con múltiples subplots |
+| `palette=['#hex1', '#hex2']` | `sns.boxplot()` | Colores personalizados por categoría con hex codes |
+| `axes[fila, col]` | `plt.subplots(2,2)` | Referencia exacta a subplot en cuadrícula 2D |

@@ -106,3 +106,35 @@ Referencia rápida de todo lo que puedes hacer con Pandas en el contexto del boo
 | Qué hace | Función clave | Nota |
 |---|---|---|
 | Z-test de proporciones (A/B) | `proportions_ztest(count, nobs)` | [[Analisis_Estadistico#ztest]] |
+
+---
+
+## 📌 Actualización S12 — Patrones Nuevos
+
+### 🔀 Merge y Limpieza
+| Qué hace | Función clave | Nota |
+|---|---|---|
+| Merge sin columnas duplicadas (_x/_y) | `catalog.columns.difference(orders.columns)` | [[KPIs_Financieros_Python#merge-seguro]] |
+| Pipeline de limpieza en función | `def limpiar_dataframe(df, ...)` | [[Transformacion_y_Feature_Engineering#pipeline-funcion]] |
+| Verificación QA post-limpieza | `def verificar_df(df, nombre)` | [[Transformacion_y_Feature_Engineering#verificacion-post]] |
+
+### 📈 Agregación y KPIs
+| Qué hace | Función clave | Nota |
+|---|---|---|
+| Producto más vendido por volumen | `groupby().sum().sort_values(ascending=False)` | [[Agregacion_y_Reportes#top-producto-volumen]] |
+| Resumen ejecutivo formateado | `f-string con >15 para alinear` | [[Agregacion_y_Reportes#resumen-ejecutivo]] |
+| Costo total fila por fila | `(orders['cantidad'] * orders['costo_unitario']).fillna(0)` | [[KPIs_Financieros_Python#profit]] |
+
+### 🧪 Estadística
+| Qué hace | Función clave | Nota |
+|---|---|---|
+| V de Cramér como función reutilizable | `def cramers_v(df, col_1, col_2)` | [[Analisis_Estadistico#cramer-funcion]] |
+| T-test sobre subconjunto filtrado | `df[df['converted']==1]` antes de `ttest_ind` | [[Analisis_Estadistico#ttest-filtrado]] |
+| Correlación individual par a par | `df['col_a'].corr(df['col_b'], method='pearson')` | [[Analisis_Estadistico#pearson-par]] |
+
+### 📉 Visualización
+| Qué hace | Función clave | Nota |
+|---|---|---|
+| Subplots 2x2 con scatterplots | `plt.subplots(2, 2)` + `sns.scatterplot(ax=axes[i,j])` | [[Visualizacion#subplots-scatter]] |
+| Boxplot comparativo A vs B | `sns.boxplot(x='grupo', y='métrica')` en subplots | [[Visualizacion#boxplot-ab]] |
+| Barplot de tasa de conversión | `groupby().mean()` + `sns.barplot()` | [[Visualizacion#barplot-conversion]] |

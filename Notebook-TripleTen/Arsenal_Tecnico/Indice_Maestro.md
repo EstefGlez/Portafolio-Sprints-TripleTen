@@ -81,8 +81,8 @@ Objetivo de la sesión: [DESCRIBIR]
 | S4 | Embudo de conversión y cohortes MercadoLibre | SQL (PostgreSQL) | CTEs, DISTINCT, Retención D7-D28, Cohortes mensuales |
 | S5 | Movilidad urbana LATAM — LADB | Python / Pandas | Carga múltiple, snake_case, merge, datetime, groupby, scatterplot |
 | S7 | Segmentación ConnectaTel | Python / Pandas | Sentinels, MAR, imputación con mediana, flags, histplot con hue |
-| S8 | Comportamiento NovaRetail+ | Python / Pandas + SciPy | pd.cut, Pearson, Spearman, Punto Biserial, V de Cramér, heatmap |
-| S9 | Pruebas A/B Landing Page | Python / SciPy + statsmodels | Chi-cuadrado, T-test, Levene, Z-test proporciones, V de Cramér, Fisher, Shapiro-Wilk |
+| S8 | Comportamiento NovaRetail+ | Python / Pandas + SciPy | pd.cut, Pearson par a par, Spearman, Punto Biserial, V de Cramér (función), subplots 2x2 scatter |
+| S9 | Pruebas A/B Landing Page | Python / SciPy + statsmodels | Chi-cuadrado, T-test filtrado, Z-test proporciones, boxplot A/B, barplot conversión |
 | S10 | Andes Retail Group | Power BI | 2 vistas, Nivel_Venta, KPIs macro, SCQA, análisis por segmento |
 | S11 | Ventas inmobiliarias — BI Comercial | Power BI / DAX | Star Schema, CALENDAR, CALCULATE+ALL, ALLEXCEPT, YTD, MTD, YoY, Cohortes, Eje dual, Semáforo |
 | S12 | RappiPlus — Proyecto Final | Python + SQL + Power BI | pd.read_sql, merge seguro, KPIs financieros, funnel SQL, cohortes LEFT JOIN, SUMX+RELATED, drill-through |
