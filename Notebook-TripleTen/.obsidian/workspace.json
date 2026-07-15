@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "6274a2e669a9f3f9",
+        "id": "5fee0c2c5e5349df",
         "type": "tabs",
         "children": [
           {
-            "id": "7e15b11626da2836",
+            "id": "c14ff3d990131a7b",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Vista gráfica"
+              "icon": "lucide-file",
+              "title": "Nueva pestaña"
             }
           }
         ]
@@ -187,8 +187,9 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "7e15b11626da2836",
+  "active": "7677d3759833f7f7",
   "lastOpenFiles": [
+    "copilot/copilot-conversations/Pasos_iniciales_proyecto_Kaggle@20260714_191220.md",
     "copilot/copilot-conversations/Pasos_iniciales_análisis_datos@20260711_164420.md",
     "copilot/copilot-conversations/Recuerdos_compartidos@20260707_133636.md",
     "copilot/copilot-conversations/Proyecto_12_en_Power_BI@20260707_162208.md",
@@ -221,7 +222,6 @@
     "Herramienta_2.md",
     "Nombre_Operacion_Anterior.md",
     "Nombre_Nota.md",
-    "Arsenal_Tecnico/Herramientas/Pandas.md",
     "Arsenal_Tecnico/Herramientas",
     "Arsenal_Tecnico/Operaciones",
     "Arsenal_Tecnico",
